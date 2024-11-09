@@ -1,3 +1,4 @@
 *.sqlite*
 # MySQLデータファイルを無視
 docker/mysql/data/
+.env
