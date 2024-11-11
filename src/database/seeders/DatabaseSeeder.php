@@ -17,8 +17,11 @@ class DatabaseSeeder extends Seeder
             ProfilesTableSeeder::class,
             UsersTableSeeder::class,
             BrandsTableSeeder::class,
+            CategoriesTableSeeder::class,
             ConditionsTableSeeder::class,
-            ConditionsTableSeeder::class,
+            ItemsTableSeeder::class,
+            TransactionsTableSeeder::class,
+            CommentsTableSeeder::class,
         ]);
     }
 }
