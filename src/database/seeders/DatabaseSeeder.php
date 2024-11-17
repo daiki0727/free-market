@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
             CategoriesTableSeeder::class,
             ConditionsTableSeeder::class,
             ItemsTableSeeder::class,
+            StatusesTableSeeder::class,
+            PaymentMethodTableSeeder::class,
             TransactionsTableSeeder::class,
             CommentsTableSeeder::class,
         ]);

@@ -23,4 +23,14 @@ class Transaction extends Model
     {
         return $this->belongsTo(Item::class);
     }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
+
+    public function paymentMethod()
+    {
+        return $this->belongsTo(PaymentMethod::class);
+    }
 }

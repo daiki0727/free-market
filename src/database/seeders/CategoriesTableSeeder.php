@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\support\Facades\DB;
+use Illuminate\Support\Facades\DB;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -15,20 +15,20 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         $params = [
-            ['brand_name' => '衣類'],
-            ['brand_name' => 'シューズ'],
-            ['brand_name' => 'バッグ'],
-            ['brand_name' => '腕時計'],
-            ['brand_name' => 'アクセサリー'],
-            ['brand_name' => '帽子'],
-            ['brand_name' => '楽器'],
-            ['brand_name' => '雑貨'],
-            ['brand_name' => '本'],
-            ['brand_name' => '財布/小物'],
-            ['brand_name' => 'インテリア'],
-            ['brand_name' => 'フレグランス'],
-            ['brand_name' => 'おもちゃ'],
+            ['category_name' => '衣類'],
+            ['category_name' => 'シューズ'],
+            ['category_name' => 'バッグ'],
+            ['category_name' => '腕時計'],
+            ['category_name' => 'アクセサリー'],
+            ['category_name' => '帽子'],
+            ['category_name' => '楽器'],
+            ['category_name' => '雑貨'],
+            ['category_name' => '本'],
+            ['category_name' => '財布/小物'],
+            ['category_name' => 'インテリア'],
+            ['category_name' => 'フレグランス'],
+            ['category_name' => 'おもちゃ'],
         ];
-        DB::table('brands')->insert($params);
+        DB::table('categories')->insert($params);
     }
 }
