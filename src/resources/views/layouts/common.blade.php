@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free Market</title>
-    <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/reset/reset.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/layouts/common.css') }}">
     @yield('css')
 </head>
 
@@ -14,33 +15,32 @@
     <header class="header">
         <div class="header__logo">
             <a href="/">
-                <img src="{{ asset('images/logo.png') }}" alt="サイトロゴ" class="logo">
+                <img class="logo" src="{{ asset('svg/logo.svg') }}" alt="サイトロゴ">
             </a>
         </div>
-    </header>
 
-    <div class="header__search">
-        <form action="" method="GET" class="search-form">
-            <input type="text" name="query" placeholder="商品を検索" class="search-input">
-            <button type="submit" class="search-button">検索</button>
-        </form>
-    </div>
-
+        <div class="header__search">
+            <form class="search-form" action="" method="GET">
+                <input class="search-input" type="text" name="query" placeholder="商品を検索">
+                <button class="search-button" type="submit">検索</button>
+            </form>
+        </div>
         <nav class="header__nav">
-      <ul class="nav-list">
-        @guest
-          <!-- 未ログイン時 -->
-          <li><a href="">ログイン</a></li>
-          <li><a href="">会員登録</a></li>
-        @endguest
-        @auth
-          <!-- ログイン時 -->
-          <li><a href="">マイページ</a></li>
-        @endauth
-        <li><a href="" class="sell-link">出品</a></li>
-      </ul>
-    </nav>
-
+            <ul class="nav-list">
+                @guest
+                    <!-- 未ログイン時 -->
+                    <li class="login-list"><a class="login-link" href="">ログイン</a></li>
+                    <li class="register-list"><a class="register-link" href="">会員登録</a></li>
+                @endguest
+                @auth
+                    <!-- ログイン時 -->
+                    <li class="logout-list"><a class="logout-link" href="">ログアウト</a></li>
+                    <li class="mypage-list"><a class="mypage-link" href="">マイページ</a></li>
+                @endauth
+                <li class="sell-list"><a class="sell-link" href="">出品</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <main>
         @yield('content')

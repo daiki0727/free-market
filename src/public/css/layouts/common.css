@@ -1,0 +1,64 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px 20px;
+}
+
+.header__logo {
+    width: 100%;
+    max-width: 300px;
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.header__search {
+    width: 100%;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    margin: 0 20px;
+    width: 70%;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.login-list,
+.register-list,
+.logout-list,
+.mypage-list {
+    padding: 5px 20px;
+}   
+
+.login-link,
+.register-link,
+.logout-link,
+.mypage-link {
+    color: white;
+    text-decoration: none;
+}
+
+.sell-list{
+    background-color: white;
+    border-radius: 3px;
+    padding: 5px 20px;
+}
+.sell-link {
+    color: black;
+    text-decoration: none;
+}
