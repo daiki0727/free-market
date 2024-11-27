@@ -2,12 +2,14 @@
     display: flex;
     justify-content: space-between;
     background-color: black;
-    padding: 10px 20px;
+    padding: 15px 40px;
 }
 
 .header__logo {
     width: 100%;
     max-width: 300px;
+    display: flex;
+    align-items: center;
 }
 
 .logo {
@@ -18,14 +20,31 @@
 
 .header__search {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-form {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+
 }
 
 .header__nav {
     display: flex;
     align-items: center; 
-    justify-content: space-between;
-    margin: 0 20px;
-    width: 70%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-list {
@@ -42,7 +61,9 @@
 .register-list,
 .logout-list,
 .mypage-list {
-    padding: 5px 20px;
+    padding: 8px 30px;
+    margin: 0 10px;
+    font-size: 20px;
 }   
 
 .login-link,
@@ -56,7 +77,9 @@
 .sell-list{
     background-color: white;
     border-radius: 3px;
-    padding: 5px 20px;
+    padding: 8px 30px;
+    margin: 0 50px;
+    font-size: 20px;
 }
 .sell-link {
     color: black;

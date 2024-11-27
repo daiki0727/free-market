@@ -18,28 +18,28 @@
                 <img class="logo" src="{{ asset('svg/logo.svg') }}" alt="サイトロゴ">
             </a>
         </div>
-
-        <div class="header__search">
-            <form class="search-form" action="" method="GET">
-                <input class="search-input" type="text" name="query" placeholder="商品を検索">
-                <button class="search-button" type="submit">検索</button>
-            </form>
-        </div>
-        <nav class="header__nav">
-            <ul class="nav-list">
-                @guest
-                    <!-- 未ログイン時 -->
-                    <li class="login-list"><a class="login-link" href="">ログイン</a></li>
-                    <li class="register-list"><a class="register-link" href="">会員登録</a></li>
-                @endguest
-                @auth
-                    <!-- ログイン時 -->
-                    <li class="logout-list"><a class="logout-link" href="">ログアウト</a></li>
-                    <li class="mypage-list"><a class="mypage-link" href="">マイページ</a></li>
-                @endauth
-                <li class="sell-list"><a class="sell-link" href="">出品</a></li>
-            </ul>
-        </nav>
+        @if (!in_array(Route::currentRouteName(), ['login', 'register']))
+            <div class="header__search">
+                <form class="search-form" action="" method="GET">
+                    <input class="search-input" type="text" name="query" placeholder="なにをお探しですか？">
+                </form>
+            </div>
+            <nav class="header__nav">
+                <ul class="nav-list">
+                    @guest
+                        <!-- 未ログイン時 -->
+                        <li class="login-list"><a class="login-link" href="">ログイン</a></li>
+                        <li class="register-list"><a class="register-link" href="">会員登録</a></li>
+                    @endguest
+                    @auth
+                        <!-- ログイン時 -->
+                        <li class="logout-list"><a class="logout-link" href="">ログアウト</a></li>
+                        <li class="mypage-list"><a class="mypage-link" href="">マイページ</a></li>
+                    @endauth
+                    <li class="sell-list"><a class="sell-link" href="">出品</a></li>
+                </ul>
+            </nav>
+        @endif
     </header>
 
     <main>
