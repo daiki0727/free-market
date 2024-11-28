@@ -1,20 +1,42 @@
 @extends('layouts.common')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('css/auth/register.css') }}">
+@endsection
+
 @section('content')
-<div class="register-container">
-    <h1>会員登録</h1>
-    <form action="{{ route('register') }}" method="POST">
-        @csrf
-        <label for="name">名前:</label>
-        <input type="text" name="name" id="name" required>
+    <div class="register-container">
+        <h1 class="register-title">会員登録</h1>
+        <form class="register-form" action="{{ route('register') }}" method="POST">
+            @csrf
 
-        <label for="email">メールアドレス:</label>
-        <input type="email" name="email" id="email" required>
+            <div class="name-box">
+                <label class="name-label" for="name">名前</label>
+                <input class="name-input" type="text" name="name" id="name" value="{{ old('name') }}" required>
 
-        <label for="password">パスワード:</label>
-        <input type="password" name="password" id="password" required>
+                @error('name')
+                    <div class="error">{{ $message }}</div>
+                @enderror
+            </div>
 
-        <button type="submit">登録</button>
-    </form>
-</div>
+            <div class="email-box">
+                <label class="email-label" for="email">メールアドレス</label>
+                <input class="email-input" type="email" name="email" id="email" value="{{ old('email') }}"
+                    required>
+                @error('email')
+                    <div class="error">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="password-box">
+                <label class="password-label" for="password">パスワード</label>
+                <input class="password-input" type="password" name="password" id="password" required>
+                @error('password')
+                    <div class="error">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <button class="register-btn" type="submit">登録する</button>
+        </form>
+    </div>
 @endsection
