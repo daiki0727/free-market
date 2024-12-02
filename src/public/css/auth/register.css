@@ -9,6 +9,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    
 }
 
 .name-box,
@@ -18,6 +19,7 @@
     flex-direction: column;
     width: 100%;
     margin: 10px;
+    height: 110px;
 }
 
 .name-label,
@@ -45,17 +47,28 @@
     margin: 0 auto;
     font-size: 20px;
     color: red;
-
+    height: 24px;
+    line-height: 24px;
 }
 
 .register-btn {
     padding: 5px;
     width: 50%;
-    margin: 50px;
+    margin: 30px;
     background-color: #FF5555;
     border-color: #FF5555;
     border-radius: 3PX;
     color: white;
     font-size: 20PX;
     font-weight: bold;
+}
+
+.login-rink__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-rink {
+    text-decoration: none;
 }

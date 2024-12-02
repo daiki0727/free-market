@@ -13,7 +13,6 @@
             <div class="name-box">
                 <label class="name-label" for="name">名前</label>
                 <input class="name-input" type="text" name="name" id="name" value="{{ old('name') }}" required>
-
                 @error('name')
                     <div class="error">{{ $message }}</div>
                 @enderror
@@ -38,5 +37,8 @@
 
             <button class="register-btn" type="submit">登録する</button>
         </form>
+        <div class="login-rink__box">
+            <a class="login-rink" href="" >ログインはこちら</a>
+        </div>
     </div>
 @endsection
