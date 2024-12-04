@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -14,4 +15,5 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+Route::post('/register', [RegisteredUserController::class, 'store']);
 Route::get('/', [HomeController::class, 'index']);
