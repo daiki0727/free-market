@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,11 +12,17 @@ class AuthenticatedSessionController extends Controller
 
     public function store(Request $request)
     {
-        $request->authenticate();
 
-        $request->session()->regenerate();
+        // ユーザーの認証
+        if (Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password,
+        ], $request->remember)) {
+            // 認証成功後、セッション再生成
+            $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+            return redirect()->intended(RouteServiceProvider::HOME);
+        }
     }
 
     public function destroy(Request $request)

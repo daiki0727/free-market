@@ -1,7 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisteredUserController;
+use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\HomeController;
 
 /*
@@ -15,5 +17,14 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::post('/register', [RegisteredUserController::class, 'store']);
+// 会員登録処理
+Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');
+
+// ログイン処理
+Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login');
+
+// ログアウト処理
+Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+// ホーム画面
 Route::get('/', [HomeController::class, 'index']);

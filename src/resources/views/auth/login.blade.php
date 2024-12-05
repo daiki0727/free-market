@@ -30,7 +30,7 @@
             <button class="login-btn" type="submit">ログインする</button>
         </form>
         <div class="register-rink__box">
-            <a class="register-rink" href="">会員登録はこちら</a>
+            <a class="register-rink" href="{{ route('register') }}">会員登録はこちら</a>
         </div>
     </div>
 @endsection

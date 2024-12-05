@@ -62,16 +62,22 @@
 .logout-list,
 .mypage-list {
     padding: 8px 30px;
-    margin: 0 10px;
-    font-size: 20px;
-}   
+    font-size: 18px;
+}
 
 .login-link,
 .register-link,
-.logout-link,
 .mypage-link {
     color: white;
     text-decoration: none;
+}
+
+.logout-btn {
+    color: white;
+    background: transparent;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
 }
 
 .sell-list{
@@ -79,7 +85,7 @@
     border-radius: 3px;
     padding: 8px 30px;
     margin: 0 50px;
-    font-size: 20px;
+    font-size: 18px;
 }
 .sell-link {
     color: black;

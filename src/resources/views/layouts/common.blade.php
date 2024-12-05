@@ -28,12 +28,17 @@
                 <ul class="nav-list">
                     @guest
                         <!-- 未ログイン時 -->
-                        <li class="login-list"><a class="login-link" href="">ログイン</a></li>
-                        <li class="register-list"><a class="register-link" href="">会員登録</a></li>
+                        <li class="login-list"><a class="login-link" href="{{ route('login') }}">ログイン</a></li>
+                        <li class="register-list"><a class="register-link" href="{{ route('register') }}">会員登録</a></li>
                     @endguest
                     @auth
                         <!-- ログイン時 -->
-                        <li class="logout-list"><a class="logout-link" href="">ログアウト</a></li>
+                        <li class="logout-list">
+                            <form class="logout-form" action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <button class="logout-btn" type="submit">ログアウト</button>
+                            </form>
+                        </li>
                         <li class="mypage-list"><a class="mypage-link" href="">マイページ</a></li>
                     @endauth
                     <li class="sell-list"><a class="sell-link" href="">出品</a></li>
