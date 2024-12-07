@@ -50,8 +50,10 @@ class FortifyServiceProvider extends ServiceProvider
         });
 
         Fortify::verifyEmailView(function () {
+            dd('verifyEmailView has been called');
             return view('auth.verify-email');
         });
+
 
         Fortify::authenticateUsing(function (Request $request) {
             $request->validate([
