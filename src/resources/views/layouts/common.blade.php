@@ -18,7 +18,7 @@
                 <img class="logo" src="{{ asset('svg/logo.svg') }}" alt="サイトロゴ">
             </a>
         </div>
-        @if (!in_array(Route::currentRouteName(), ['login', 'register']))
+        @if (!in_array(Route::currentRouteName(), ['login', 'register', 'verify-email']))
             <div class="header__search">
                 <form class="search-form" action="" method="GET">
                     <input class="search-input" type="text" name="query" placeholder="なにをお探しですか？">

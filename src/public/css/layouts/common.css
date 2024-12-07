@@ -78,6 +78,7 @@
     border: none;
     text-decoration: none;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .sell-list{
