@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MypageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +49,6 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 // ホーム画面
 Route::get('/', [HomeController::class, 'index']);
+
+//マイページ画面
+Route::get('/mypage', [MypageController::class, 'show']);
