@@ -51,4 +51,6 @@ Route::post('/email/verification-notification', function (Request $request) {
 Route::get('/', [HomeController::class, 'index']);
 
 //マイページ画面
-Route::get('/mypage', [MypageController::class, 'show']);
+Route::get('/mypage', [MypageController::class, 'index'])
+->name('mypage')
+->middleware('auth');

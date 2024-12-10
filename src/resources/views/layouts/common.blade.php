@@ -39,7 +39,7 @@
                                 <button class="logout-btn" type="submit">ログアウト</button>
                             </form>
                         </li>
-                        <li class="mypage-list"><a class="mypage-link" href="">マイページ</a></li>
+                        <li class="mypage-list"><a class="mypage-link" href="{{ route('mypage') }}">マイページ</a></li>
                     @endauth
                     <li class="sell-list"><a class="sell-link" href="">出品</a></li>
                 </ul>
