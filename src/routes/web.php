@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisteredUserController;
 use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,6 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/mypage', [MypageController::class, 'index'])
 ->name('mypage')
 ->middleware('auth');
+
+// ホーム画面
+Route::get('/profile', [ProfileController::class, 'show']);
