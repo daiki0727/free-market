@@ -13,7 +13,7 @@
         <div class="name-area">
             <h2 class="user-name">{{ $user->name }}</h2>
         </div>
-        <a class="profile-btn" href="">プロフィールを編集</a>
+        <a class="profile-btn" href="{{ route('profile') }}">プロフィールを編集</a>
 
     </div>
 

@@ -36,7 +36,7 @@
     width: 50%;
     height: 40px;
     margin: 0 auto;
-        border-radius: 3PX;
+    border-radius: 3PX;
 }
 
 .error {
@@ -44,7 +44,6 @@
     margin: 0 auto;
     font-size: 20px;
     color: red;
-
 }
 
 .login-btn {

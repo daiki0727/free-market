@@ -11,36 +11,50 @@
         @csrf
         <!-- プロフィール画像と変更ボタン -->
         <div class="image-box">
-            <img class="profile-picture" src="{{-- {{ asset('storage/profile_pictures/' . $user->profile_picture) }} --}}"
-                alt="Profile Picture">
-            <input type="file" name="profile_picture" accept="image/*" class="file-input">
+            <img class="profile-picture" src="">
+            <label class="profile-picture__btn" for="profile-picture__input">
+                画像を選択する
+            </label>
+            <input class="profile-picture__input" type="file" name="image_url" accept="image/*">
         </div>
 
         <!-- ユーザー名 -->
         <div class="user-name__box">
-            <h3 class="nick-name__heading">ユーザー名</h3>
+            <label class="nick-name__label">ユーザー名</label>
             <input class="nick-name__input" type="text" name="nick_name" value="{{-- {{ $user->name }} --}}">
+            @error('nick-name')
+                <div class="error">{{ $message }}</div>
+            @enderror
         </div>
 
         <!-- 郵便番号 -->
         <div class="post-code__box">
-            <h3 class="post-code__heading">郵便番号</h3>
+            <label class="post-code__label">郵便番号</label>
             <input class="post-code__input" type="text" name="post_code" value="{{-- {{ $user->post_code }} --}}">
+            @error('post_code')
+                <div class="error">{{ $message }}</div>
+            @enderror
         </div>
 
         <!-- 住所 -->
         <div class="address__box">
-            <h3 class="address__heading">住所</h3>
+            <label class="address__label">住所</label>
             <input class="address__input" type="text" name="address" value="{{-- {{ $user->address }} --}}">
+            @error('address')
+                <div class="error">{{ $message }}</div>
+            @enderror
         </div>
 
         <!-- 建物名 -->
         <div class="building__box">
-            <h3 class="building__heading">建物名</h3>
+            <label class="building__label">建物名</label>
             <input class="building__input" type="text" name="building" value="{{-- {{ $user->building }} --}}">
+            @error('building')
+                <div class="error">{{ $message }}</div>
+            @enderror
         </div>
 
         <!-- 更新ボタン -->
-        <button type="submit" class="update__btn">更新する</button>
+        <button class="update-btn" type="submit">更新する</button>
     </form>
 @endsection

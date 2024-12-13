@@ -1,19 +1,97 @@
 .set-heading {
     text-align: center;
-    margin: 50px;
+    margin: 30px 0 10px 0 ;
 }
 
 .profile-update__form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.image-box {
+    width: 100%;
+    padding: 10px;
 }
 
 .profile-picture {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 100px;
     object-fit: cover;
     background-color: gray;
+}
+
+.profile-picture__input {
+    display: none;
+}
+
+.profile-picture__btn {
+    margin-left: auto;
+    text-decoration: none;
+    padding: 10px 30px;
+    color: #FF5555;
+    border: 2px solid #FF5555;
+    border-radius: 5px;
+    border-color: #FF5555;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.user-name__box,
+.post-code__box,
+.address__box,
+.building__box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
+    height: 110px;
+}
+
+.nick-name__label,
+.post-code__label,
+.address__label,
+.building__label {
+    width: 40%;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.nick-name__input,
+.post-code__input,
+.address__input,
+.building__input {
+    padding: 10px;
+    width: 40%;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 3PX;
+}
+
+.error {
+    width: 40%;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 20px;
+    color: red;
+}
+
+.update-btn {
+    padding: 5px;
+    width: 40%;
+    margin: 30px;
+    background-color: #FF5555;
+    border-color: #FF5555;
+    border-radius: 3PX;
+    color: white;
+    font-size: 20PX;
+    font-weight: bold;
 }

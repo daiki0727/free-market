@@ -57,4 +57,5 @@ Route::get('/mypage', [MypageController::class, 'index'])
 ->middleware('auth');
 
 // ホーム画面
-Route::get('/profile', [ProfileController::class, 'show']);
+Route::get('/profile', [ProfileController::class, 'show'])
+->name('profile');
