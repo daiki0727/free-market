@@ -59,3 +59,7 @@ Route::get('/mypage', [MypageController::class, 'index'])
 // ホーム画面
 Route::get('/profile', [ProfileController::class, 'show'])
 ->name('profile');
+
+// プロフィール情報編集
+Route::post('/update-profile', [ProfileController::class, 'update'])
+->name('profile.update');
