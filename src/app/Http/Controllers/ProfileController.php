@@ -28,7 +28,6 @@ class ProfileController extends Controller
                 $oldImagePath = str_replace(asset('storage'), '', $profile->image_url);
                 Storage::disk('public')->delete($oldImagePath);
             }
-
             // 新しい画像を保存
             $path = $request->file('image_url')->store('profiles', 'public');
             // URL形式で保存
@@ -43,6 +42,6 @@ class ProfileController extends Controller
         $profile->save();
 
         // 更新完了後のリダイレクト
-        return redirect()->back()->with('success', 'プロフィールを更新しました！');
+        return redirect()->back();
     }
 }

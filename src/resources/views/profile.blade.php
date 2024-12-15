@@ -13,7 +13,7 @@
         <!-- プロフィール画像と変更ボタン -->
         <div class="image-box">
             <!-- プロフィール画像の表示 -->
-
+            <img class="profile-picture" src="{{ Auth::user()->profile->image_url }}">
             <!-- 画像選択ボタン -->
             <label class="profile-picture__btn" for="profile-picture__input">
                 画像を選択する
