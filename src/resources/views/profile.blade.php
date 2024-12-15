@@ -19,7 +19,7 @@
                 画像を選択する
             </label>
             <!-- 隠れたファイル入力 -->
-            <input id="profile-picture__input" class="profile-picture__input" type="file" name="image_url"
+            <input class="profile-picture__input" id="profile-picture__input" type="file" name="image_url"
                 accept="image/*" style="display: none;">
         </div>
 

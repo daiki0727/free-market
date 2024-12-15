@@ -8,6 +8,7 @@ use App\Http\Controllers\AuthenticatedSessionController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,29 +38,35 @@ Route::get('/email/verify', function () {
 //メール確認リンクリクエスト処理
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
-
-    return redirect('/mypage');
+    return redirect('/profile');
 })->middleware(['auth', 'signed'])->name('verification.verify');
 
 //メール再送信
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
-
-    return back()->with('message', 'Verification link sent!');
+    return back();
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-// ホーム画面
+// ホーム画面表示
 Route::get('/', [HomeController::class, 'index']);
 
-//マイページ画面
+//マイページ画面表示
 Route::get('/mypage', [MypageController::class, 'index'])
 ->name('mypage')
 ->middleware('auth');
 
-// ホーム画面
+// プロフィール画面表示
 Route::get('/profile', [ProfileController::class, 'show'])
 ->name('profile');
 
 // プロフィール情報編集
 Route::post('/update-profile', [ProfileController::class, 'update'])
 ->name('profile.update');
+
+// 出品画面画面表示
+Route::get('/item', [ListingController::class, 'show'])
+    ->name('item');
+
+// 出品画面画面表示
+Route::post('/item-listing', [ListingController::class, 'store'])
+    ->name('item-listing');

@@ -41,7 +41,7 @@
                         </li>
                         <li class="mypage-list"><a class="mypage-link" href="{{ route('mypage') }}">マイページ</a></li>
                     @endauth
-                    <li class="sell-list"><a class="sell-link" href="">出品</a></li>
+                    <li class="sell-list"><a class="sell-link" href="{{ route('item') }}">出品</a></li>
                 </ul>
             </nav>
         @endif

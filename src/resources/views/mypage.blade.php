@@ -8,7 +8,7 @@
     <div class="profile-container">
 
         <div class="image-area">
-            <img class="profile-picture" src="">
+            <img class="profile-picture" src="{{ Auth::user()->profile->image_url }}">
         </div>
         <div class="name-area">
             <h2 class="user-name">{{ $user->name }}</h2>
