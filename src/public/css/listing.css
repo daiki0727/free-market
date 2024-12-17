@@ -71,6 +71,7 @@
 
 .categories__area,
 .condition__area,
+.brand__area,
 .item-name__area,
 .price__area {
     width: 100%;
@@ -92,6 +93,7 @@
 
 .categories__label,
 .condition__label,
+.brand__label,
 .item-name__label,
 .item-description__label,
 .price__label {
@@ -105,14 +107,16 @@
     
 }
 
-.categories__input,
-.condition__input,
+.categories__select,
+.condition__select,
+.brand__select,
 .item-name__input,
 .price__input {
     padding: 10px;
     width: 100%;
     height: 40px;
     margin: 0 auto;
+    border: 2px solid black;
     border-radius: 3PX;
 }
 

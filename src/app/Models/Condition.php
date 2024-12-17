@@ -9,6 +9,8 @@ class Condition extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['condition_name']; 
+
     public function items()
     {
         return $this->hasmany(Item::class);
