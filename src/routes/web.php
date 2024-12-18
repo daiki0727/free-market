@@ -63,10 +63,10 @@ Route::get('/profile', [ProfileController::class, 'show'])
 Route::post('/update-profile', [ProfileController::class, 'update'])
 ->name('profile.update');
 
-// 出品画面画面表示
+// 出品画面表示
 Route::get('/item', [ListingController::class, 'show'])
     ->name('item');
 
-// 出品画面画面表示
+// 出品機能
 Route::post('/item-listing', [ListingController::class, 'store'])
     ->name('item-listing');

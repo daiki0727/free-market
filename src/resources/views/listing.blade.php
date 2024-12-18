@@ -17,8 +17,7 @@
                 画像を選択する
             </label>
             <!-- 隠れたファイル入力 -->
-            <input class="item-picture__input" id="item-picture__input"type="file" name="image_url" accept="image/*"
-                style="display: none;">
+            <input class="item-picture__input" id="item-picture__input"type="file" name="image_url" accept="image/* "style="display: none;" alt="">
         </div>
 
         <!-- 商品の詳細 -->
@@ -26,8 +25,9 @@
         <div class="item-detail__box">
             <div class="categories__area">
                 <label class="categories__label">カテゴリー</label>
+
                 <select class="categories__select" type="text" name="category_id" value="{{ old('category_id') }}">
-                    <option value="">選択してください</option>
+                    <option class="select-head">選択してください</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->category_name }}</option>
                     @endforeach

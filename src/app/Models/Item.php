@@ -9,7 +9,17 @@ class Item extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'image_url', 'user_id'];
+    protected $fillable = [
+        'item_name',
+        'description',
+        'category_id',
+        'condition_id',
+        'brand_id',
+        'price',
+        'image_url',
+        'user_id'
+    ];
+
 
     public function user()
     {

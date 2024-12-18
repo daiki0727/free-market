@@ -27,6 +27,7 @@
     justify-content: center;
     align-items: center;
     border: 1px dotted gray;
+    border-radius: 3px;
 }
 
 .item-picture__btn {
@@ -118,6 +119,13 @@
     margin: 0 auto;
     border: 2px solid black;
     border-radius: 3PX;
+}
+
+.categories__select,
+.condition__select,
+.brand__select {
+    appearance: none;
+    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24" height="24" width="24"><path d="M6 9l6 6 6-6"/></svg>') no-repeat right 10px center;
 }
 
 .item-description__textarea {
