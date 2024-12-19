@@ -23,7 +23,6 @@
                 accept="image/*" style="display: none;">
         </div>
 
-
         <!-- ユーザー名 -->
         <div class="user-name__box">
             <label class="nick-name__label">ユーザー名</label>

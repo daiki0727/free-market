@@ -51,7 +51,15 @@
     font-weight: bold;
     font-size: 18px;
     color: gray;
+    border: none;
+    background: none;
+    cursor: pointer;
 }
+
+.active-tab {
+    color: #FF5555;
+}
+
 
 .items-container {
     display: flex;
