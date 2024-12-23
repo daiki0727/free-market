@@ -17,12 +17,12 @@
 
     <div class="select-continer">
         <form method="GET" action="{{ route('mypage') }}" class="tab-form">
-            <button type="submit" name="tab" value="seller"
-                class="seller-btn {{ $tab === 'seller' ? 'active-tab' : '' }}">
+            <button class="seller-btn {{ $tab === 'seller' ? 'active-tab' : '' }}" type="submit" name="tab"
+                value="seller">
                 出品した商品
             </button>
-            <button type="submit" name="tab" value="purchased"
-                class="purchase-btn {{ $tab === 'purchased' ? 'active-tab' : '' }}">
+            <button class="purchase-btn {{ $tab === 'purchased' ? 'active-tab' : '' }}" type="submit" name="tab"
+                value="purchased">
                 購入した商品
             </button>
         </form>
@@ -35,7 +35,9 @@
             @foreach ($items as $item)
                 <div class="item-card">
                     <a class="item-detail" href="">
-                        <img class="item-image" src="{{ Str::startsWith($item->image_url, 'http') ? $item->image_url : asset('storage/' . $item->image_url) }}" alt="{{ $item->item_name }}">
+                        <img class="item-image"
+                            src="{{ Str::startsWith($item->image_url, 'http') ? $item->image_url : asset('storage/' . $item->image_url) }}"
+                            alt="{{ $item->item_name }}">
                     </a>
                 </div>
             @endforeach

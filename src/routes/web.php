@@ -48,7 +48,8 @@ Route::post('/email/verification-notification', function (Request $request) {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
 // ホーム画面表示
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])
+->name('home');
 
 //マイページ画面表示
 Route::get('/mypage', [MypageController::class, 'index'])
