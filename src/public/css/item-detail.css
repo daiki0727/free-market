@@ -1,0 +1,10 @@
+.item-detail__container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-image__area,
+.item-description__area {
+    flex: 1;
+    min-width: 50%;
+}

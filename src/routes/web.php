@@ -9,6 +9,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ListingController;
+use App\Http\Controllers\ItemDetailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,3 +72,7 @@ Route::get('/item', [ListingController::class, 'show'])
 // 出品機能
 Route::post('/item-listing', [ListingController::class, 'store'])
     ->name('item-listing');
+
+// 商品詳細画面表示
+Route::get('/item-detail', [ItemDetailController::class, 'index'])
+    ->name('item-detail');
