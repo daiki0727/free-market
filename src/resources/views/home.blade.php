@@ -23,7 +23,7 @@
         @else
             @foreach ($items as $item)
                 <div class="item-card">
-                    <a class="item-detail" href="">
+                    <a class="item-detail" href="{{ route('item-detail', ['id' => $item->id]) }}">
                         <img class="item-image"
                             src="{{ Str::startsWith($item->image_url, 'http') ? $item->image_url : asset('storage/' . $item->image_url) }}"
                             alt="{{ $item->item_name }}">

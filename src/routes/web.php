@@ -74,5 +74,5 @@ Route::post('/item-listing', [ListingController::class, 'store'])
     ->name('item-listing');
 
 // 商品詳細画面表示
-Route::get('/item-detail', [ItemDetailController::class, 'index'])
+Route::get('/item-detail/{id}', [ItemDetailController::class, 'index'])
     ->name('item-detail');

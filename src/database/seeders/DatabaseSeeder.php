@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             PaymentMethodTableSeeder::class,
             TransactionsTableSeeder::class,
             CommentsTableSeeder::class,
+            ColorsTableSeeder::class,
         ]);
     }
 }

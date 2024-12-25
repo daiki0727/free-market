@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Condition;
+use App\Models\Color;
 
 class ItemFactory extends Factory
 {
@@ -17,6 +18,12 @@ class ItemFactory extends Factory
      */
     public function definition()
     {
+
+        $randomColor = Color::inRandomOrder()->first();
+        if (!$randomColor) {
+            $randomColor = Color::first(); // 最初のレコードを取得
+        }
+
         return [
             'user_id' => User::inRandomOrder()->first()->id,
             'item_name' => $this->faker->randomElement([
@@ -46,6 +53,7 @@ class ItemFactory extends Factory
             'price' => $this->faker->numberBetween(1000, 50000),
             'category_id' => Category::inRandomOrder()->first()->id,
             'condition_id' => Condition::inRandomOrder()->first()->id,
+            'color_id' => $randomColor->id,
             'image_url' => $this->faker->imageUrl(640, 480, 'fashion', true),
         ];
     }

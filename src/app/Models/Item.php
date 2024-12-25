@@ -17,7 +17,8 @@ class Item extends Model
         'brand_id',
         'price',
         'image_url',
-        'user_id'
+        'user_id',
+        'color_id'
     ];
 
 
@@ -54,5 +55,10 @@ class Item extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function color()
+    {
+        return $this->belongsTo(Color::class);
     }
 }
