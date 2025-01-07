@@ -17,7 +17,8 @@
                 画像を選択する
             </label>
             <!-- 隠れたファイル入力 -->
-            <input class="item-picture__input" id="item-picture__input"type="file" name="image_url" accept="image/* "style="display: none;" alt="">
+            <input class="item-picture__input" id="item-picture__input"type="file" name="image_url"
+                accept="image/* "style="display: none;" alt="">
         </div>
 
         <!-- 商品の詳細 -->
@@ -45,6 +46,18 @@
                     @endforeach
                 </select>
                 @error('condition_id')
+                    <div class="error">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="color__area">
+                <label class="color__label">商品の色</label>
+                <select class="color__select" type="text" name="color_id" value="{{ old('color_id') }}">
+                    <option value="">選択してください</option>
+                    @foreach ($colors as $color)
+                        <option value="{{ $color->id }}">{{ $color->color_name }}</option>
+                    @endforeach
+                </select>
+                @error('color_id')
                     <div class="error">{{ $message }}</div>
                 @enderror
             </div>

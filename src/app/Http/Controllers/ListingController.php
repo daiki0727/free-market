@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Category;
 use App\Models\Condition;
+use App\Models\Color;
 use App\Models\Brand;
 use App\Models\Item; 
 
@@ -16,9 +17,10 @@ class ListingController extends Controller
 
         $categories = Category::all();
         $conditions = Condition::all();
+        $colors = Color::all();
         $brands = Brand::all();
 
-        return view('listing', compact('categories', 'conditions', 'brands'));
+        return view('listing', compact('categories', 'conditions', 'brands', 'colors'));
     }
 
     public function store(Request $request)
@@ -29,6 +31,7 @@ class ListingController extends Controller
             'description',
             'category_id',
             'condition_id',
+            'color_id',
             'brand_id',
             'price'
         ]);

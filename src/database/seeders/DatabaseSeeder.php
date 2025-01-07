@@ -19,12 +19,12 @@ class DatabaseSeeder extends Seeder
             BrandsTableSeeder::class,
             CategoriesTableSeeder::class,
             ConditionsTableSeeder::class,
+            ColorsTableSeeder::class,
             ItemsTableSeeder::class,
             StatusesTableSeeder::class,
             PaymentMethodTableSeeder::class,
             TransactionsTableSeeder::class,
             CommentsTableSeeder::class,
-            ColorsTableSeeder::class,
         ]);
     }
 }

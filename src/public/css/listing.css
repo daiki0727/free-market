@@ -51,10 +51,9 @@
     color: gray;
 }
 
-.item-detail__box,
-.price__box {
+.item-detail__box {
     width: 50%;
-    height: 220px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -70,8 +69,18 @@
     border-top: 1px solid gray;
 }
 
+.price__box {
+    width: 50%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid gray;
+}
+
 .categories__area,
 .condition__area,
+.color__area,
 .brand__area,
 .item-name__area,
 .price__area {
@@ -94,6 +103,7 @@
 
 .categories__label,
 .condition__label,
+.color__label,
 .brand__label,
 .item-name__label,
 .item-description__label,
@@ -110,6 +120,7 @@
 
 .categories__select,
 .condition__select,
+.color__select,
 .brand__select,
 .item-name__input,
 .price__input {
@@ -123,6 +134,7 @@
 
 .categories__select,
 .condition__select,
+.color__select,
 .brand__select {
     appearance: none;
     background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="black" stroke-width="2" viewBox="0 0 24 24" height="24" width="24"><path d="M6 9l6 6 6-6"/></svg>') no-repeat right 10px center;
