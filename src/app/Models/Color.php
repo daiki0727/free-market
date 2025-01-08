@@ -13,6 +13,6 @@ class Color extends Model
 
     public function items()
     {
-        return $this->hasmany(Item::class);
+        return $this->hasone(Item::class);
     }
 }

@@ -1,10 +1,10 @@
-.item-detail__container {
+.item__container {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .item-image__area,
-.item-description__area {
+.item-detail__area {
     flex: 1;
     min-width: 50%;
 }
