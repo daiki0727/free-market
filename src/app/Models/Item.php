@@ -52,6 +52,11 @@ class Item extends Model
         return $this->hasMany(Favorite::class);
     }
 
+    public function isFavoritedBy($user)
+    {
+        return $this->favorites->contains('user_id', $user->id);
+    }
+
     public function comments()
     {
         return $this->hasMany(Comment::class);
@@ -61,4 +66,6 @@ class Item extends Model
     {
         return $this->belongsTo(Color::class);
     }
+
+
 }

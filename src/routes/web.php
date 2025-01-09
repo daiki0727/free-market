@@ -10,6 +10,7 @@ use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ItemDetailController;
+use App\Http\Controllers\FavoriteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -76,3 +77,7 @@ Route::post('/item-listing', [ListingController::class, 'store'])
 // 商品詳細画面表示
 Route::get('/item-detail/{id}', [ItemDetailController::class, 'index'])
     ->name('item-detail');
+
+//お気に入り登録機能
+Route::post('/items/{item}/favorite', [FavoriteController::class, 'toggle'])
+->name('items.favorite.toggle');

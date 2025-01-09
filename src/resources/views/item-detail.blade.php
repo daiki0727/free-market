@@ -22,12 +22,37 @@
                     <span class="prace__label">¥</span>
                     <span class="prace__name">{{ number_format($item->price) }}</span>
                 </div>
+
                 <div class="favorite-comment__area">
-                    {{-- お気に入り・コメントボタンの実装（数とコメントボタンはコメントページへ飛べる） --}}
+                    <div class="favorite__box">
+                        <form action="{{ route('items.favorite.toggle', ['item' => $item->id]) }}" method="POST"
+                            style="display:inline;">
+                            @csrf
+                            <input type="hidden" name="item_id" value="{{ $item->id }}">
+                            <button type="submit"
+                                class="favorite-btn {{ auth()->check() && $item->isFavoritedBy(auth()->user()) ? 'favorited' : '' }}">
+                                ★
+                            </button>
+                        </form>
+                        <div class="favorite-count">
+                            {{ $item->favorites_count }} <!-- お気に入りの数 -->
+                        </div>
+                    </div>
+
+                    <div class="comment__box">
+                        <!-- コメントボタン -->
+                        <a class="comment-btn" href="{{-- {{ route('comments.index', ['item' => $item->id]) }} --}}">
+                            💬
+                        </a>
+                        <div class="comment-count">
+                            {{ $item->comments_count }} <!-- コメントの数 -->
+                        </div>
+                    </div>
                 </div>
+
                 <form class="buyer_form">
                     @csrf
-                    <a class="buyer-btn" href="{{-- /buy/{{ $item->id }} --}}">購入する</a>
+                    <button class="buyer-btn" href="{{-- /buy/{{ $item->id }} --}}">購入する</button>
                 </form>
             </div>
 
