@@ -80,4 +80,5 @@ Route::get('/item-detail/{id}', [ItemDetailController::class, 'index'])
 
 //お気に入り登録機能
 Route::post('/items/{item}/favorite', [FavoriteController::class, 'toggle'])
-->name('items.favorite.toggle');
+->name('items.favorite.toggle')
+->middleware('auth');

@@ -25,6 +25,7 @@
 
                 <div class="favorite-comment__area">
                     <div class="favorite__box">
+                        @auth
                         <form action="{{ route('items.favorite.toggle', ['item' => $item->id]) }}" method="POST"
                             style="display:inline;">
                             @csrf
@@ -34,6 +35,7 @@
                                 ★
                             </button>
                         </form>
+                        @endauth
                         <div class="favorite-count">
                             {{ $item->favorites_count }} <!-- お気に入りの数 -->
                         </div>

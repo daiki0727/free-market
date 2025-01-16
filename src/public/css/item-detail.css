@@ -30,13 +30,14 @@
 }
 
 .favorite-btn {
-    font-size: 2rem; /* ★の大きさ */
+    font-size: 3rem; /* ★の大きさ */
     background: none;
     border: none;
     cursor: pointer;
     outline: none;
     transition: color 0.3s ease;
     color: gray; /* お気に入り未登録時はグレー */
+    margin-top: 4px;
 }
 
 .favorite-btn:hover {
@@ -45,12 +46,6 @@
 
 .favorite-btn.favorited {
     color: gold; /* 登録済み時にゴールド */
-}
-
-.favorite-count {
-    font-size: 1rem;
-    color: #555;
-    margin-top: 5px;
 }
 
 .favorite__box,
@@ -63,10 +58,12 @@
 
 .favorite-count,
 .comment-count {
-    font-size: 1rem;
     color: #555;
-    margin-top: 5px;
     text-align: center;
+}
+
+.comment-count {
+    line-height: 10px;
 }
 
 .favorite-btn,
@@ -75,15 +72,10 @@
     vertical-align: middle;
 }
 
-.favorite-btn {
-    font-size: 40px;
-    padding: 10px;
-}
-
 .comment-btn {
     text-decoration: none;
-    font-size: 30px;
-    padding: 13px 10px;
+    font-size: 2rem;
+    padding: 10px;
 }
 
 .buyer-btn {
