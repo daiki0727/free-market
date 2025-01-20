@@ -26,19 +26,19 @@
                 <div class="favorite-comment__area">
                     <div class="favorite__box">
                         @auth
-                        <form action="{{ route('items.favorite.toggle', ['item' => $item->id]) }}" method="POST"
-                            style="display:inline;">
-                            @csrf
-                            <input type="hidden" name="item_id" value="{{ $item->id }}">
-                            <button type="submit"
-                                class="favorite-btn {{ auth()->check() && $item->isFavoritedBy(auth()->user()) ? 'favorited' : '' }}">
-                                ★
-                            </button>
-                        </form>
+                            <form action="{{ route('items.favorite.toggle', ['item' => $item->id]) }}" method="POST"
+                                style="display:inline;">
+                                @csrf
+                                <input type="hidden" name="item_id" value="{{ $item->id }}">
+                                <button type="submit"
+                                    class="favorite-btn {{ auth()->check() && $item->isFavoritedBy(auth()->user()) ? 'favorited' : '' }}">
+                                    ★
+                                </button>
+                            </form>
+                            <div class="favorite-count">
+                                {{ $item->favorites_count }} <!-- お気に入りの数 -->
+                            </div>
                         @endauth
-                        <div class="favorite-count">
-                            {{ $item->favorites_count }} <!-- お気に入りの数 -->
-                        </div>
                     </div>
 
                     <div class="comment__box">

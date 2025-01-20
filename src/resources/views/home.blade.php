@@ -6,12 +6,11 @@
 
 @section('content')
     <div class="select-continer">
-        <form method="GET" action="{{ route('mypage') }}" class="tab-form">
+        <form method="GET" action="{{ route('home') }}" class="tab-form">
             <button class="recommend-btn {{ $tab === 'recommend' ? 'active-tab' : '' }}" type="submit" name="tab" value="recommend">
                 おすすめ
             </button>
-            <button class="mylist-btn {{ $tab === 'mylist' ? 'active-tab' : '' }}" type="submit" name="tab"
-                value="mylist">
+            <button class="mylist-btn {{ $tab === 'mylist' ? 'active-tab' : '' }}" type="submit" name="tab" value="mylist">
                 マイリスト
             </button>
         </form>
@@ -19,7 +18,7 @@
 
     <div class="items-container">
         @if ($items->isEmpty())
-            <p>商品がありません。</p>
+            <p>お気に入り商品がありません。</p>
         @else
             @foreach ($items as $item)
                 <div class="item-card">
