@@ -11,6 +11,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ItemDetailController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\BuildingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,28 +52,32 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 // ホーム画面表示
 Route::get('/', [HomeController::class, 'index'])
-->name('home');
+    ->name('home');
 
 //マイページ画面表示
 Route::get('/mypage', [MypageController::class, 'index'])
-->name('mypage')
-->middleware('auth');
+    ->name('mypage')
+    ->middleware('auth');
 
 // プロフィール画面表示
 Route::get('/profile', [ProfileController::class, 'show'])
-->name('profile');
+    ->name('profile')
+    ->middleware('auth');
 
 // プロフィール情報編集
 Route::post('/update-profile', [ProfileController::class, 'update'])
-->name('profile.update');
+    ->name('profile.update')
+    ->middleware('auth');
 
 // 出品画面表示
 Route::get('/item', [ListingController::class, 'show'])
-    ->name('item');
+    ->name('item')
+    ->middleware('auth');
 
 // 出品機能
 Route::post('/item-listing', [ListingController::class, 'store'])
-    ->name('item-listing');
+    ->name('item-listing')
+    ->middleware('auth');
 
 // 商品詳細画面表示
 Route::get('/item-detail/{id}', [ItemDetailController::class, 'index'])
@@ -80,5 +85,15 @@ Route::get('/item-detail/{id}', [ItemDetailController::class, 'index'])
 
 //お気に入り登録機能
 Route::post('/items/{item}/favorite', [FavoriteController::class, 'toggle'])
-->name('items.favorite.toggle')
-->middleware('auth');
+    ->name('items.favorite.toggle')
+    ->middleware('auth');
+
+// 住所変更画面表示
+Route::get('/building', [BuildingController::class, 'show'])
+    ->name('profile')
+    ->middleware('auth');
+
+// 住所変更機能
+Route::post('/change-building', [BuildingController::class, 'update'])
+    ->name('change.building')
+    ->middleware('auth');
