@@ -97,3 +97,7 @@ Route::get('/building', [BuildingController::class, 'show'])
 Route::post('/change-building', [BuildingController::class, 'update'])
     ->name('change.building')
     ->middleware('auth');
+
+//購入機能
+Route::get('/transaction', function () {
+    return view('transaction-page'); });
