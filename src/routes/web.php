@@ -12,6 +12,8 @@ use App\Http\Controllers\ListingController;
 use App\Http\Controllers\ItemDetailController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\BuildingController;
+use App\Http\Controllers\TransactionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -99,5 +101,6 @@ Route::post('/change-building', [BuildingController::class, 'update'])
     ->middleware('auth');
 
 //購入機能
-Route::get('/transaction', function () {
-    return view('transaction-page'); });
+
+Route::get('/transaction', [TransactionController::class, 'index'])
+->name('transaction');
