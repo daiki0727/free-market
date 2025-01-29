@@ -8,6 +8,6 @@ class TransactionController extends Controller
 {
     public function index()
     {
-        return view('transaction-page'); // ビューを返す
+        return view('transaction-page');
     }
 }

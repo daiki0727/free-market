@@ -22,10 +22,12 @@
 
         <div class="payment-middle__area">
             <h2 class="payment-method__heading">支払方法</h2>
+            <a href="" class="payment-method__change">変更する</a>
         </div>
 
         <div class="payment-bottom__area">
-            <h2 class="shipping-address_heading">配送先</h2>
+            <h2 class="shipping-address__heading">配送先</h2>
+            <a href="" class="shipping-address__change">変更する</a>
         </div>
 
     </div>

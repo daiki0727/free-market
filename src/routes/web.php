@@ -13,6 +13,7 @@ use App\Http\Controllers\ItemDetailController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\BuildingController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\PaymentMethodController;
 
 
 /*
@@ -100,7 +101,12 @@ Route::post('/change-building', [BuildingController::class, 'update'])
     ->name('change.building')
     ->middleware('auth');
 
-//購入機能
 
+//支払方法変更
+Route::get('/payment-method', [PaymentMethodController::class, 'index'])
+->name('payment.method');
+
+
+//購入機能
 Route::get('/transaction', [TransactionController::class, 'index'])
-->name('transaction');
+->name('transaction-page');
