@@ -102,9 +102,14 @@ Route::post('/change-building', [BuildingController::class, 'update'])
     ->middleware('auth');
 
 
-//支払方法変更
-Route::get('/payment-method', [PaymentMethodController::class, 'index'])
-->name('payment.method');
+//支払方法変更画面表示
+Route::get('/payment-method', [PaymentMethodController::class, 'showPaymentForm'])
+->name('payment.form');
+Route::post('/payment-method', [PaymentMethodController::class, 'processPayment'])
+->name('payment.process');
+Route::get('/payment-success', function () {
+    return view('payment-success');
+})->name('payment.success');
 
 
 //購入機能

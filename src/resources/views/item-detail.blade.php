@@ -52,10 +52,12 @@
                     </div>
                 </div>
 
-                <form class="buyer_form">
+                <form class="buyer_form" action="{{ route('transaction-page') }}" method="GET">
                     @csrf
-                    <button class="buyer-btn" href="{{-- /buy/{{ $item->id }} --}}">購入する</button>
+                    <input type="hidden" name="item_id" value="{{ $item->id }}">
+                    <button class="buyer-btn">購入する</button>
                 </form>
+
             </div>
 
             <div class="item-middle__box">

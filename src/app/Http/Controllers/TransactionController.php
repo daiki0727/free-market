@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Item;
 
 class TransactionController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('transaction-page');
+        // 商品情報を取得（例: IDをリクエストから取得）
+        $item = Item::find($request->item_id);
+
+        // アイテムが存在しない場合の処理
+        if (!$item) {
+            return redirect()->route('home')->with('error', '商品が見つかりません。');
+        }
+
+        return view('transaction-page', compact('item'));
     }
+
 }
