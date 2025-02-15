@@ -7,7 +7,9 @@
 @section('content')
     <div class="item__container">
         <div class="item-image__area">
-            <img class="item-image" src="{{ asset($item->image_url) }}" alt="{{ $item->item_name }}">
+            <img class="item-image"
+                src="{{ Str::startsWith($item->image_url, 'http') ? $item->image_url : asset('storage/' . $item->image_url) }}"
+                alt="{{ $item->item_name }}">
         </div>
 
         <div class="item-detail__area">
@@ -20,7 +22,7 @@
                 </div>
                 <div class="prace__area">
                     <span class="prace__label">¥</span>
-                    <span class="prace__name">{{ number_format($item->price) }}</span>
+                    <span class="prace__number">{{ number_format($item->price) }}</span>
                 </div>
 
                 <div class="favorite-comment__area">

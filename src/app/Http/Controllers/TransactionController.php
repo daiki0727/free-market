@@ -14,7 +14,7 @@ class TransactionController extends Controller
 
         // アイテムが存在しない場合の処理
         if (!$item) {
-            return redirect()->route('home')->with('error', '商品が見つかりません。');
+            return redirect()->route('home');
         }
 
         return view('transaction-page', compact('item'));

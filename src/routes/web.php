@@ -93,7 +93,7 @@ Route::post('/items/{item}/favorite', [FavoriteController::class, 'toggle'])
 
 // 住所変更画面表示
 Route::get('/building', [BuildingController::class, 'show'])
-    ->name('profile')
+    ->name('building')
     ->middleware('auth');
 
 // 住所変更機能

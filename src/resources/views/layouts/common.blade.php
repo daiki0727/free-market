@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{{ asset('css/reset/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/layouts/common.css') }}">
     @yield('css')
-    @livewireStyles
 </head>
 
 <body>
@@ -50,7 +49,6 @@
 
     <main>
         @yield('content')
-        @livewireScripts
     </main>
 </body>
 
