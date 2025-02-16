@@ -38,20 +38,24 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 //メール認証
 Route::get('/email/verify', function () {
-    return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
+    return view('auth.verify-email');})
+    ->middleware('auth')
+    ->name('verification.notice');
 
 //メール確認リンクリクエスト処理
 Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
     $request->fulfill();
-    return redirect('/profile');
-})->middleware(['auth', 'signed'])->name('verification.verify');
+    return redirect('/profile');})
+    ->middleware(['auth', 'signed'])
+    ->name('verification.verify');
 
 //メール再送信
 Route::post('/email/verification-notification', function (Request $request) {
     $request->user()->sendEmailVerificationNotification();
     return back();
-})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+})
+    ->middleware(['auth', 'throttle:6,1'])
+    ->name('verification-send');
 
 // ホーム画面表示
 Route::get('/', [HomeController::class, 'index'])
@@ -59,28 +63,28 @@ Route::get('/', [HomeController::class, 'index'])
 
 //マイページ画面表示
 Route::get('/mypage', [MypageController::class, 'index'])
-    ->name('mypage')
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('mypage');
 
 // プロフィール画面表示
 Route::get('/profile', [ProfileController::class, 'show'])
-    ->name('profile')
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('profile');
 
 // プロフィール情報編集
 Route::post('/update-profile', [ProfileController::class, 'update'])
-    ->name('profile.update')
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('profile-update');
 
 // 出品画面表示
 Route::get('/item', [ListingController::class, 'show'])
-    ->name('item')
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('item');
 
 // 出品機能
 Route::post('/item-listing', [ListingController::class, 'store'])
-    ->name('item-listing')
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('item-listing');
 
 // 商品詳細画面表示
 Route::get('/item-detail/{id}', [ItemDetailController::class, 'index'])
@@ -88,30 +92,31 @@ Route::get('/item-detail/{id}', [ItemDetailController::class, 'index'])
 
 //お気に入り登録機能
 Route::post('/items/{item}/favorite', [FavoriteController::class, 'toggle'])
-    ->name('items.favorite.toggle')
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('items-favorite-toggle');
 
 // 住所変更画面表示
 Route::get('/building', [BuildingController::class, 'show'])
-    ->name('building')
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('building');
 
 // 住所変更機能
 Route::post('/change-building', [BuildingController::class, 'update'])
-    ->name('change.building')
-    ->middleware('auth');
+    ->middleware('auth')
+    ->name('change-building');
 
 
-//支払方法変更画面表示
+// 支払方法変更画面表示
 Route::get('/payment-method', [PaymentMethodController::class, 'showPaymentForm'])
-->name('payment.form');
-Route::post('/payment-method', [PaymentMethodController::class, 'processPayment'])
-->name('payment.process');
-Route::get('/payment-success', function () {
-    return view('payment-success');
-})->name('payment.success');
+    ->middleware('auth')
+    ->name('payment-form');
 
+// 支払方法変更処理
+Route::post('/payment-method', [PaymentMethodController::class, 'processPayment'])
+    ->middleware('auth')
+    ->name('payment-process');
 
 //購入機能
 Route::get('/transaction', [TransactionController::class, 'index'])
-->name('transaction-page');
+    ->middleware('auth')
+    ->name('transaction-page');

@@ -28,7 +28,7 @@
                 <div class="favorite-comment__area">
                     <div class="favorite__box">
                         @auth
-                            <form action="{{ route('items.favorite.toggle', ['item' => $item->id]) }}" method="POST"
+                            <form action="{{ route('items-favorite-toggle', ['item' => $item->id]) }}" method="POST"
                                 style="display:inline;">
                                 @csrf
                                 <input type="hidden" name="item_id" value="{{ $item->id }}">

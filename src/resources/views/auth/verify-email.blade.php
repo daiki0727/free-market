@@ -12,7 +12,7 @@
             <span class="verify-message">確認用メールを送信しました。</span>
             <span class="verify-message">メールをご確認いただき、メールに記載されたボタンをクリックして登録を完了してください。</span>
             <span class="verify-message__resend">メールが届かない方は以下のボタンを再度クリックしてください。</span>
-            <form class="verify-form" action="{{ route('verification.send') }}" method="post">
+            <form class="verify-form" action="{{ route('verification-send') }}" method="post">
                 @csrf
                 <button class="resend-btn">メール再送信</button>
             </form>
