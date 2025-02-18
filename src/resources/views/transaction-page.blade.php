@@ -1,7 +1,7 @@
 @extends('layouts.common')
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('css/transaction-page.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/transaction.css') }}">
 @endsection
 
 @section('content')
@@ -49,7 +49,7 @@
                     <span class="confirm-prace-method__name">{{ $paymentMethod->payment_method ?? '未設定' }}</span>
                 </div>
             </div>
-            <form class="buyer_form" action="{{ route('transaction-page') }}" method="GET">
+            <form class="buyer_form" action="{{ route('transaction') }}" method="GET">
                 @csrf
                 <input type="hidden" name="item_id" value="{{ $item->id }}">
                 <button class="buyer-btn">購入する</button>

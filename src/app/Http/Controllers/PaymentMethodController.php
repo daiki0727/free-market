@@ -22,7 +22,7 @@ class PaymentMethodController extends Controller
 
     public function processPayment(Request $request)
     {
-        // 最後の取引を取得（まだ取引が存在しない場合も考慮）
+        // ログインしているユーザーの最後の取引を取得
         $transaction = Transaction::where('buyer_id', auth()->id())->latest()->first();
 
         if ($transaction) {
@@ -30,9 +30,15 @@ class PaymentMethodController extends Controller
             $transaction->update([
                 'payment_method_id' => $request->payment_method,
             ]);
+        } else {
+            // 取引がない場合、新規作成
+            $transaction = Transaction::create([
+                'buyer_id' => auth()->id(),
+                'payment_method_id' => $request->payment_method,
+            ]);
         }
 
         // 支払方法変更後に transaction-page にリダイレクト
-        return redirect()->route('transaction-page');
+        return redirect()->route('transaction');
     }
 }

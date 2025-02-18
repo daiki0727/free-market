@@ -119,4 +119,4 @@ Route::post('/payment-method', [PaymentMethodController::class, 'processPayment'
 //購入機能
 Route::get('/transaction', [TransactionController::class, 'index'])
     ->middleware('auth')
-    ->name('transaction-page');
+    ->name('transaction');

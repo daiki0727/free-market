@@ -54,7 +54,7 @@
                     </div>
                 </div>
 
-                <form class="buyer_form" action="{{ route('transaction-page') }}" method="GET">
+                <form class="buyer_form" action="{{ route('transaction') }}" method="GET">
                     @csrf
                     <input type="hidden" name="item_id" value="{{ $item->id }}">
                     <button class="buyer-btn">購入する</button>
